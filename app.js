@@ -19,18 +19,17 @@ router.put("/ingresado/:dni/:idEventos/:dt", function (req, res) {
     var idEventos = req.params.idEventos;
     var dt = req.params.dt;
     (0, db_1.doAndSendQuery)(res, querys_1.querys.putEntradaWhenIngresado(dni, idEventos, dt));
-    // res.json(200);
 });
-router.post("/localdatabasebackup/:espectaculo_id/:dni/:dt/:personas/:salas", function (req, res) {
-    var data = {
-        espectaculo_id: req.params.espectaculo_id,
-        dni: req.params.dni,
-        fechayhora: req.params.fechayhora,
-        personas: req.params.personas,
-        salas: req.params.salas
-    };
-    (0, db_1.doAndSendQuery)(res, querys_1.querys.postCliente(data));
-});
+// router.post("/localdatabasebackup/:espectaculo_id/:dni/:dt/:personas/:salas", (req, res) => {
+//     const data = {
+//         espectaculo_id: req.params.espectaculo_id,
+//         dni: req.params.dni,
+//         fechayhora: req.params.fechayhora,
+//         personas: req.params.personas,
+//         salas: req.params.salas
+//     }
+//     doAndSendQuery(res, querys.postCliente(data));
+// });
 //-------------------------------------------------------------------------------\\
 app.use('/api/cck/tickets', router);
 app.listen(port, function () {
