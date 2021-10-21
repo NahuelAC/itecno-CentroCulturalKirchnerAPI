@@ -2,13 +2,13 @@
 
 const Querys = {
 
-    getEntradas: () => `SELECT * FROM Entradas`,
+    getEntradas: () => `SELECT * FROM MNBAEntradas`,
 
-    getEntradasByDni: (dni) => `SELECT * FROM Entradas WHERE dni='${dni}'`,
+    getEntradasByDni: (dni) => `SELECT * FROM MNBAEntradas WHERE dni='${dni}'`,
 
-    getEntradasByDate: (date) => `SELECT * FROM Entradas WHERE fecha='${date}'`,
+    getEntradasByDate: (date) => `SELECT * FROM MNBAEntradas WHERE fecha='${date}'`,
 
-    putEntradaWhenIngresado: (dni, idEventos, dt) => `UPDATE Entradas SET Ingresado='${dt}' WHERE dni=${dni} AND idEventos=${idEventos}`,
+    putEntradaWhenIngresado: (dni, idEventos, dt) => `UPDATE MNBAEntradas SET Ingresado='${dt}' WHERE dni=${dni} AND idEventos=${idEventos}`,
 
     postCliente: (data) => `INSERT INTO <table> (espectaculo_id, dni, fechayhora, personas, sala) ('${data.espectaculo_id}', '${data.dni}', '${data.fechayhora}', '${data.personas}', '${data.sala}')`
 
