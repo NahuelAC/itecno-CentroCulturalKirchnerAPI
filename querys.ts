@@ -10,7 +10,7 @@ const Querys = {
 
     putEntradaWhenIngresado: (dni, idEventos, dt) => `UPDATE MNBAEntradas SET Ingresado='${dt}' WHERE dni=${dni} AND idEventos=${idEventos}`,
 
-    postCliente: (data) => `INSERT INTO <table> (espectaculo_id, dni, fechayhora, personas, sala) ('${data.espectaculo_id}', '${data.dni}', '${data.fechayhora}', '${data.personas}', '${data.sala}')`
+    postCliente: (data) => `INSERT INTO LocalDevicesBackup (espectaculo_id, dni, fecha, personas, sala) ('${data.espectaculo_id}', '${data.dni}', '${data.fechayhora}', '${data.personas}', '${data.sala}')`
 
 }
 
