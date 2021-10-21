@@ -1,5 +1,4 @@
 import * as express from "express";
-import * as bodyParser from "body-parser";
 import {querys} from "./querys";
 import {doAndSendQuery} from "./db";
 
@@ -28,23 +27,18 @@ router.put("/ingresado/:dni/:idEventos/:dt", (req, res) => {
     // res.json(200);
 });
 
-router.post("/localdatabasebackup", (req, res) => {
+router.post("/localdatabasebackup/:espectaculo_id/:dni/:dt/:personas/:salas", (req, res) => {
     const data = {
-        espectaculo_id: req.body.espectaculo_id,
-        dni: req.body.dni,
-        fechayhora: req.body.fechayhora,
-        personas: req.body.personas,
-        salas: req.body.salas
+        espectaculo_id: req.params.espectaculo_id,
+        dni: req.params.dni,
+        fechayhora: req.params.fechayhora,
+        personas: req.params.personas,
+        salas: req.params.salas
     }
     doAndSendQuery(res, querys.postCliente(data));
 });
 
 //-------------------------------------------------------------------------------\\
-
-app.use( bodyParser.json() );
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
 
 app.use('/api/cck/tickets', router);
 

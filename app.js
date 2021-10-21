@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
-var bodyParser = require("body-parser");
 var querys_1 = require("./querys");
 var db_1 = require("./db");
 var app = express();
@@ -22,21 +21,17 @@ router.put("/ingresado/:dni/:idEventos/:dt", function (req, res) {
     (0, db_1.doAndSendQuery)(res, querys_1.querys.putEntradaWhenIngresado(dni, idEventos, dt));
     // res.json(200);
 });
-router.post("/localdatabasebackup", function (req, res) {
+router.post("/localdatabasebackup/:espectaculo_id/:dni/:dt/:personas/:salas", function (req, res) {
     var data = {
-        espectaculo_id: req.body.espectaculo_id,
-        dni: req.body.dni,
-        fechayhora: req.body.fechayhora,
-        personas: req.body.personas,
-        salas: req.body.salas
+        espectaculo_id: req.params.espectaculo_id,
+        dni: req.params.dni,
+        fechayhora: req.params.fechayhora,
+        personas: req.params.personas,
+        salas: req.params.salas
     };
     (0, db_1.doAndSendQuery)(res, querys_1.querys.postCliente(data));
 });
 //-------------------------------------------------------------------------------\\
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
 app.use('/api/cck/tickets', router);
 app.listen(port, function () {
     console.log("Api listening at http://localhost:" + port);
