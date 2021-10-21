@@ -1,4 +1,5 @@
 import * as express from "express";
+import * as bodyParser from "body-parser";
 import {querys} from "./querys";
 import {doAndSendQuery} from "./db";
 
@@ -40,6 +41,10 @@ router.post("/localdatabasebackup", (req, res) => {
 
 //-------------------------------------------------------------------------------\\
 
+app.use( bodyParser.json() );
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 app.use('/api/cck/tickets', router);
 

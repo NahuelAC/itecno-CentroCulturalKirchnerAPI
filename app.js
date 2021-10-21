@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
+var bodyParser = require("body-parser");
 var querys_1 = require("./querys");
 var db_1 = require("./db");
 var app = express();
@@ -32,6 +33,10 @@ router.post("/localdatabasebackup", function (req, res) {
     (0, db_1.doAndSendQuery)(res, querys_1.querys.postCliente(data));
 });
 //-------------------------------------------------------------------------------\\
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use('/api/cck/tickets', router);
 app.listen(port, function () {
     console.log("Api listening at http://localhost:" + port);
