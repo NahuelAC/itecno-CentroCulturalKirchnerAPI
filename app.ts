@@ -18,20 +18,16 @@ router.get("/bydni/:dni", (req, res) => {
     doAndSendQuery(res, querys.getEntradasByDni(dni));
 });
 
-router.put("/show/:dni/:idEventos/:dt", (req, res) => {
-    const dni = req.params.dni;
-    const idEventos = req.params.idEventos;
-    const dt = req.params.dt;
+router.put("/show/:idEntradas", (req, res) => {
+    const idEntradas = req.params.idEntradas;
 
-    putAndSendQuery(res, querys.putEntradaShow(dni, idEventos, dt));
+    putAndSendQuery(res, querys.putEntradaShow(idEntradas));
 });
 
-router.put("/preshow/:dni/:idEventos/:dt", (req, res) => {
-    const dni = req.params.dni;
-    const idEventos = req.params.idEventos;
-    const dt = req.params.dt;
+router.put("/preshow/:idEntradas", (req, res) => {
+    const idEntradas = req.params.idEntradas;
 
-    putAndSendQuery(res, querys.putEntradaPreshow(dni, idEventos, dt));
+    putAndSendQuery(res, querys.putEntradaPreshow(idEntradas));
 });
 
 //-------------------------------------------------------------------------------\\

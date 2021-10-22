@@ -14,17 +14,13 @@ router.get("/bydni/:dni", function (req, res) {
     var dni = req.params.dni;
     (0, db_1.doAndSendQuery)(res, querys_1.querys.getEntradasByDni(dni));
 });
-router.put("/show/:dni/:idEventos/:dt", function (req, res) {
-    var dni = req.params.dni;
-    var idEventos = req.params.idEventos;
-    var dt = req.params.dt;
-    (0, db_1.putAndSendQuery)(res, querys_1.querys.putEntradaShow(dni, idEventos, dt));
+router.put("/show/:idEntradas", function (req, res) {
+    var idEntradas = req.params.idEntradas;
+    (0, db_1.putAndSendQuery)(res, querys_1.querys.putEntradaShow(idEntradas));
 });
-router.put("/preshow/:dni/:idEventos/:dt", function (req, res) {
-    var dni = req.params.dni;
-    var idEventos = req.params.idEventos;
-    var dt = req.params.dt;
-    (0, db_1.putAndSendQuery)(res, querys_1.querys.putEntradaPreshow(dni, idEventos, dt));
+router.put("/preshow/:idEntradas", function (req, res) {
+    var idEntradas = req.params.idEntradas;
+    (0, db_1.putAndSendQuery)(res, querys_1.querys.putEntradaPreshow(idEntradas));
 });
 //-------------------------------------------------------------------------------\\
 app.use('/api/cck/tickets', router);
