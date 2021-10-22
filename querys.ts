@@ -8,9 +8,9 @@ const Querys = {
 
     getEntradasByDate: (date) => `SELECT * FROM MNBAEntradas WHERE fecha='${date}'`,
 
-    putEntradaShow: (dni, idEventos, dt) => `UPDATE MNBAEntradas SET Show='${dt}' WHERE dni=${dni} AND idEventos=${idEventos}`,
+    putEntradaShow: (dni, idEventos, dt) => `UPDATE MNBAEntradas  SET Show=GETDATE() WHERE dni=${dni} AND idEventos=${idEventos}`,
 
-    putEntradaPreshow: (dni, idEventos, dt) => `UPDATE MNBAEntradas SET Preshow='${dt}' WHERE dni=${dni} AND idEventos=${idEventos}`
+    putEntradaPreshow: (dni, idEventos, dt) => `UPDATE MNBAEntradas  SET Show=GETDATE() WHERE dni=${dni} AND idEventos=${idEventos}`
 
 }
 
