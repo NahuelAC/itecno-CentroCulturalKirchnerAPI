@@ -8,9 +8,9 @@ const Querys = {
 
     getEntradasByDate: (date) => `SELECT * FROM MNBAEntradas WHERE fecha='${date}'`,
 
-    putEntradaWhenIngresado: (dni, idEventos, dt) => `UPDATE MNBAEntradas SET Ingresado='${dt}' WHERE dni=${dni} AND idEventos=${idEventos}`,
+    putEntradaShow: (dni, idEventos, dt) => `UPDATE MNBAEntradas SET Show='${dt}' WHERE dni=${dni} AND idEventos=${idEventos}`,
 
-    postCliente: (data) => `INSERT INTO LocalDevicesBackup (espectaculo_id, dni, fecha, personas, sala) ('${data.espectaculo_id}', '${data.dni}', '${data.fechayhora}', '${data.personas}', '${data.sala}')`
+    putEntradaPreshow: (dni, idEventos, dt) => `UPDATE MNBAEntradas SET Preshow='${dt}' WHERE dni=${dni} AND idEventos=${idEventos}`
 
 }
 

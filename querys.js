@@ -5,7 +5,7 @@ var Querys = {
     getEntradas: function () { return "SELECT * FROM MNBAEntradas"; },
     getEntradasByDni: function (dni) { return "SELECT * FROM MNBAEntradas WHERE dni='" + dni + "'"; },
     getEntradasByDate: function (date) { return "SELECT * FROM MNBAEntradas WHERE fecha='" + date + "'"; },
-    putEntradaWhenIngresado: function (dni, idEventos, dt) { return "UPDATE MNBAEntradas SET Ingresado='" + dt + "' WHERE dni=" + dni + " AND idEventos=" + idEventos; },
-    postCliente: function (data) { return "INSERT INTO LocalDevicesBackup (espectaculo_id, dni, fecha, personas, sala) ('" + data.espectaculo_id + "', '" + data.dni + "', '" + data.fechayhora + "', '" + data.personas + "', '" + data.sala + "')"; }
+    putEntradaShow: function (dni, idEventos, dt) { return "UPDATE MNBAEntradas SET Show='" + dt + "' WHERE dni=" + dni + " AND idEventos=" + idEventos; },
+    putEntradaPreshow: function (dni, idEventos, dt) { return "UPDATE MNBAEntradas SET Preshow='" + dt + "' WHERE dni=" + dni + " AND idEventos=" + idEventos; }
 };
 exports.querys = Querys;
