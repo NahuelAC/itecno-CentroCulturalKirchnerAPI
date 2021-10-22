@@ -18,7 +18,7 @@ router.get("/bydni/:dni", (req, res) => {
     doAndSendQuery(res, querys.getEntradasByDni(dni));
 });
 
-router.get("/show/:dni/:idEventos/:dt", (req, res) => {
+router.put("/show/:dni/:idEventos/:dt", (req, res) => {
     const dni = req.params.dni;
     const idEventos = req.params.idEventos;
     const dt = req.params.dt;
@@ -26,7 +26,7 @@ router.get("/show/:dni/:idEventos/:dt", (req, res) => {
     doAndSendQuery(res, querys.putEntradaShow(dni, idEventos, dt), true);
 });
 
-router.get("/preshow/:dni/:idEventos/:dt", (req, res) => {
+router.put("/preshow/:dni/:idEventos/:dt", (req, res) => {
     const dni = req.params.dni;
     const idEventos = req.params.idEventos;
     const dt = req.params.dt;

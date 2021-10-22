@@ -14,13 +14,13 @@ router.get("/bydni/:dni", function (req, res) {
     var dni = req.params.dni;
     (0, db_1.doAndSendQuery)(res, querys_1.querys.getEntradasByDni(dni));
 });
-router.get("/show/:dni/:idEventos/:dt", function (req, res) {
+router.put("/show/:dni/:idEventos/:dt", function (req, res) {
     var dni = req.params.dni;
     var idEventos = req.params.idEventos;
     var dt = req.params.dt;
     (0, db_1.doAndSendQuery)(res, querys_1.querys.putEntradaShow(dni, idEventos, dt), true);
 });
-router.get("/preshow/:dni/:idEventos/:dt", function (req, res) {
+router.put("/preshow/:dni/:idEventos/:dt", function (req, res) {
     var dni = req.params.dni;
     var idEventos = req.params.idEventos;
     var dt = req.params.dt;
