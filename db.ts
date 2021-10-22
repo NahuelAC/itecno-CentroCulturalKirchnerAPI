@@ -13,13 +13,10 @@ const connectionString =
     `Driver={SQL Server Native Client 11.0}`;
 
 
-const getQuery = (res, query: string, rescode = false) => {
+const getQuery = (res, query: string) => {
         sql.query(connectionString, query, (e, data) => {
             console.log(data);
-            if (rescode)
-                res.status(200);
-            else
-                res.json(data);
+            res.json(data);
         })};
 
 export const doAndSendQuery = getQuery;

@@ -23,7 +23,7 @@ router.put("/show/:dni/:idEventos/:dt", (req, res) => {
     const idEventos = req.params.idEventos;
     const dt = req.params.dt;
 
-    doAndSendQuery(res, querys.putEntradaShow(dni, idEventos, dt), true);
+    doAndSendQuery(res, querys.putEntradaShow(dni, idEventos, dt));
 });
 
 router.put("/preshow/:dni/:idEventos/:dt", (req, res) => {
@@ -31,7 +31,7 @@ router.put("/preshow/:dni/:idEventos/:dt", (req, res) => {
     const idEventos = req.params.idEventos;
     const dt = req.params.dt;
 
-    doAndSendQuery(res, querys.putEntradaPreshow(dni, idEventos, dt), true);
+    doAndSendQuery(res, querys.putEntradaPreshow(dni, idEventos, dt));
 });
 
 //-------------------------------------------------------------------------------\\
