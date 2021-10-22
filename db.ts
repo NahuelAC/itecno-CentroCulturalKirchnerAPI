@@ -15,6 +15,7 @@ const connectionString =
 
 const getQuery = (res, query: string, rescode = false) => {
         sql.query(connectionString, query, (e, data) => {
+            console.log(data);
             if (rescode)
                 res.status(200);
             else
