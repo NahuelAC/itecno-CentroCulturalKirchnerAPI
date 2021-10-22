@@ -18,7 +18,7 @@ var getQuery = function (res, query) {
 var putQuery = function (res, query) {
     sql.query(connectionString, query, function (e, data) {
         console.log(query);
-        res.json(query);
+        res.json(data);
     });
 };
 exports.doAndSendQuery = getQuery;
