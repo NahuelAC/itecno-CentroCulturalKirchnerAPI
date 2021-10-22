@@ -5,7 +5,7 @@ const server_config = {
     user: "nartex",
     password: "lunasa",
     database_dev: "tests",
-    database_prod: ""
+    database_prod: "MNBA"
 }
 
 export const config = server_config;
