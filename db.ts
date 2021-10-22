@@ -19,4 +19,11 @@ const getQuery = (res, query: string) => {
             res.json(data);
         })};
 
+const putQuery = (res, query: string) => {
+    sql.query(connectionString, query, (e, data) => {
+        console.log(query);
+        res.json(query);
+    })};
+
 export const doAndSendQuery = getQuery;
+export const putAndSendQuery = putQuery;

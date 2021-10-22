@@ -1,6 +1,6 @@
 import * as express from "express";
 import {querys} from "./querys";
-import {doAndSendQuery} from "./db";
+import {doAndSendQuery, putAndSendQuery} from "./db";
 
 const app = express();
 const router = express.Router();
@@ -23,7 +23,7 @@ router.put("/show/:dni/:idEventos/:dt", (req, res) => {
     const idEventos = req.params.idEventos;
     const dt = req.params.dt;
 
-    doAndSendQuery(res, querys.putEntradaShow(dni, idEventos, dt));
+    putAndSendQuery(res, querys.putEntradaShow(dni, idEventos, dt));
 });
 
 router.put("/preshow/:dni/:idEventos/:dt", (req, res) => {
@@ -31,7 +31,7 @@ router.put("/preshow/:dni/:idEventos/:dt", (req, res) => {
     const idEventos = req.params.idEventos;
     const dt = req.params.dt;
 
-    doAndSendQuery(res, querys.putEntradaPreshow(dni, idEventos, dt));
+    putAndSendQuery(res, querys.putEntradaPreshow(dni, idEventos, dt));
 });
 
 //-------------------------------------------------------------------------------\\
