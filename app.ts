@@ -18,16 +18,18 @@ router.get("/bydni/:dni", (req, res) => {
     doAndSendQuery(res, querys.getEntradasByDni(dni));
 });
 
-router.put("/show/:idEntradas", (req, res) => {
+router.put("/show/:idEntradas/:deviceid", (req, res) => {
     const idEntradas = req.params.idEntradas;
+    const deviceid = req.params.deviceid;
 
-    putAndSendQuery(res, querys.putEntradaShow(idEntradas));
+    putAndSendQuery(res, querys.putEntradaShow(idEntradas, deviceid));
 });
 
-router.put("/preshow/:idEntradas", (req, res) => {
+router.put("/preshow/:idEntradas/:deviceid", (req, res) => {
     const idEntradas = req.params.idEntradas;
+    const deviceid = req.params.deviceid;
 
-    putAndSendQuery(res, querys.putEntradaPreshow(idEntradas));
+    putAndSendQuery(res, querys.putEntradaPreshow(idEntradas, deviceid));
 });
 
 //-------------------------------------------------------------------------------\\

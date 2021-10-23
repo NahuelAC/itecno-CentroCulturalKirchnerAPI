@@ -8,9 +8,9 @@ const Querys = {
 
     getEntradasByDate: (date) => `SELECT * FROM Entradas WHERE fecha='${date}'`,
 
-    putEntradaShow: (idEntradas) => `UPDATE Entradas  SET Show=GETDATE() WHERE idEntradas=${idEntradas}`,
+    putEntradaShow: (idEntradas, presid) => `UPDATE Entradas  SET Show=GETDATE() PreSid='${presid}' WHERE idEntradas=${idEntradas}`,
 
-    putEntradaPreshow: (idEntradas) => `UPDATE Entradas  SET Preshow=GETDATE() WHERE idEntradas=${idEntradas}`
+    putEntradaPreshow: (idEntradas, sid) => `UPDATE Entradas  SET Preshow=GETDATE() Sid='${sid}' WHERE idEntradas=${idEntradas}`
 
 }
 

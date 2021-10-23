@@ -14,13 +14,15 @@ router.get("/bydni/:dni", function (req, res) {
     var dni = req.params.dni;
     (0, db_1.doAndSendQuery)(res, querys_1.querys.getEntradasByDni(dni));
 });
-router.put("/show/:idEntradas", function (req, res) {
+router.put("/show/:idEntradas/:deviceid", function (req, res) {
     var idEntradas = req.params.idEntradas;
-    (0, db_1.putAndSendQuery)(res, querys_1.querys.putEntradaShow(idEntradas));
+    var deviceid = req.params.deviceid;
+    (0, db_1.putAndSendQuery)(res, querys_1.querys.putEntradaShow(idEntradas, deviceid));
 });
-router.put("/preshow/:idEntradas", function (req, res) {
+router.put("/preshow/:idEntradas/:deviceid", function (req, res) {
     var idEntradas = req.params.idEntradas;
-    (0, db_1.putAndSendQuery)(res, querys_1.querys.putEntradaPreshow(idEntradas));
+    var deviceid = req.params.deviceid;
+    (0, db_1.putAndSendQuery)(res, querys_1.querys.putEntradaPreshow(idEntradas, deviceid));
 });
 //-------------------------------------------------------------------------------\\
 app.use('/api/cck/tickets', router);
