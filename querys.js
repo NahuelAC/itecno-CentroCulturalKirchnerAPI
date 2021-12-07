@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.querys = void 0;
 var Querys = {
     getEventos: function () { return "SELECT * FROM Eventos"; },
-    getEventoById: function (dni) { return "SELECT * FROM Eventos WHERE idEventos='" + dni + "'"; },
+    getEventoById: function (id) { return "SELECT * FROM Eventos WHERE idEventos='" + id + "'"; },
     getEntradas: function () { return "SELECT * FROM Entradas"; },
     getEntradasByDni: function (dni) { return "SELECT * FROM Entradas WHERE dni='" + dni + "'"; },
     getEntradasByDate: function (date) { return "SELECT * FROM Entradas WHERE fecha='" + date + "'"; },
