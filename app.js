@@ -6,7 +6,7 @@ var db_1 = require("./db");
 var app = express();
 var router1 = express.Router();
 var router2 = express.Router();
-var port = 3001;
+var port = 3000;
 //----------------------| Centro Cultural Kirchner Api |------------------------\\
 router1.get("/all", function (req, res) {
     (0, db_1.doAndSendQuery)(res, querys_1.querys.getEntradas());
