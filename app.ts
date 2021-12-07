@@ -5,7 +5,7 @@ import {doAndSendQuery, putAndSendQuery} from "./db";
 const app = express();
 const router1 = express.Router();
 const router2 = express.Router();
-const port = 3000;
+const port = 3001;
 
 
 //----------------------| Centro Cultural Kirchner Api |------------------------\\
