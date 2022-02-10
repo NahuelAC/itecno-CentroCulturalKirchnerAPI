@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var express = require("express");
 var querys_1 = require("./querys");
 var db_1 = require("./db");
@@ -11,9 +11,10 @@ var port = 3001;
 router1.get("/all", function (req, res) {
     (0, db_1.doAndSendQuery)(res, querys_1.querys.getEntradas());
 });
-router1.get("/bydni/:dni", function (req, res) {
+router1.get("/bydni/:dni/:id_evento", function (req, res) {
     var dni = req.params.dni;
-    (0, db_1.doAndSendQuery)(res, querys_1.querys.getEntradasByDni(dni));
+    var id_evento = req.params.id_evento;
+    (0, db_1.doAndSendQuery)(res, querys_1.querys.getEntradasByDni(dni, id_evento));
 });
 router1.put("/show/:idEntradas/:deviceid", function (req, res) {
     var idEntradas = req.params.idEntradas;
@@ -36,5 +37,5 @@ router2.get("/byid/:id", function (req, res) {
 app.use('/api/cck/tickets', router1);
 app.use('/api/cck/eventos', router2);
 app.listen(port, function () {
-    console.log("Api listening at http://localhost:" + port);
+    console.log("Api listening at http://localhost:".concat(port));
 });
