@@ -50,6 +50,11 @@ router2.get("/byid/:id", (req, res) => {
 app.use('/api/cck/tickets', router1);
 app.use('/api/cck/eventos', router2);
 
+app.get("/apk", (req, res) => {
+    const file = "C:\\Users\\Administrator\\Documentos\\cck_apk\\com.arqytech.cck.qr-1.6.apk";
+    res.download(file);
+});
+
 
 app.listen(port, () => {
     console.log(`Api listening at http://localhost:${port}`);
