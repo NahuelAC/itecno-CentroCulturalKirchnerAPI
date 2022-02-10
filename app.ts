@@ -58,6 +58,7 @@ app.use('/api/cck/eventos', router2);
 app.get("/apk", (req, res) => {
     const file = "C:\\Users\\Administrator\\Documents\\cck_apk\\com.arqytech.cck.qr-1.6.1.apk";
     res.download(file);
+    res.json("Descargando el APK com.arqytech.cck.qr-1.6.1")
 });
 
 
