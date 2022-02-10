@@ -16,6 +16,10 @@ router1.get("/bydni/:dni/:id_evento", function (req, res) {
     var id_evento = req.params.id_evento;
     (0, db_1.doAndSendQuery)(res, querys_1.querys.getEntradasByDni(dni, id_evento));
 });
+router1.get("/bydni/:dni", function (req, res) {
+    var dni = req.params.dni;
+    (0, db_1.doAndSendQuery)(res, querys_1.querys.getEntradasByDni(dni, null));
+});
 router1.put("/show/:idEntradas/:deviceid", function (req, res) {
     var idEntradas = req.params.idEntradas;
     var deviceid = req.params.deviceid;

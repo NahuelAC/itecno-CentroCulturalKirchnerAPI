@@ -20,6 +20,11 @@ router1.get("/bydni/:dni/:id_evento", (req, res) => {
     doAndSendQuery(res, querys.getEntradasByDni(dni, id_evento));
 });
 
+router1.get("/bydni/:dni", (req, res) => {
+    const dni = req.params.dni;
+    doAndSendQuery(res, querys.getEntradasByDni(dni, null));
+});
+
 router1.put("/show/:idEntradas/:deviceid", (req, res) => {
     const idEntradas = req.params.idEntradas;
     const deviceid = req.params.deviceid;
